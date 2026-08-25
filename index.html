@@ -3,26 +3,161 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nan Clayton PTA Calendar</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #222222;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 50px 25px;
+    }
+
+    .cardinal {
+      width: 180px;
+      max-width: 60%;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 34px;
+      font-weight: 600;
+      margin: 0 0 20px;
+    }
+
+    .intro {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 35px;
+      color: #555555;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 16px 28px;
+      background: #222222;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .button:hover {
+      background: #444444;
+    }
+
+    .important {
+      margin-top: 45px;
+      padding: 25px;
+      border-top: 1px solid #dddddd;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #555555;
+    }
+
+    .warning {
+      margin-top: 30px;
+      padding: 18px;
+      background: #fff7f5;
+      border: 1px solid #e2b8b0;
+      border-radius: 8px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .steps {
+      margin-top: 30px;
+      padding: 25px;
+      background: #f7f7f7;
+      border-radius: 8px;
+      text-align: left;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .steps h2 {
+      text-align: center;
+      font-size: 22px;
+      margin-top: 0;
+    }
+
+    .steps p {
+      margin: 15px 0;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 35px 20px;
+      }
+
+      .cardinal {
+        width: 150px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
 
-<body style="font-family: Arial, sans-serif; text-align: center; padding: 40px 20px;">
+<body>
 
-  <h1>📅 Nan Clayton PTA Calendar</h1>
+  <div class="container">
 
-  <p>Subscribe to the PTA calendar to receive event updates.</p>
+    <img
+      src="nan-clayton-pta-cardinal.png"
+      alt="Nan Clayton PTA cardinal"
+      class="cardinal">
 
-  <p>
-    <a href="webcal://calendar.google.com/calendar/ical/c_3vbs72qgcje33ggv7ahervbhm8%40group.calendar.google.com/public/basic.ics"
-       style="display:inline-block; padding:16px 24px; background:#007aff; color:white; text-decoration:none; border-radius:10px; font-weight:bold;">
-       🍎 Subscribe to Apple Calendar
+    <h1>iPhone Users: Subscribe Here</h1>
+
+    <p class="intro">
+      Subscribe to the Nan Clayton PTA calendar to receive event updates.
+    </p>
+
+    <a
+      class="button"
+      href="webcal://calendar.google.com/calendar/ical/c_3vbs72qgcje33ggv7ahervbhm8%40group.calendar.google.com/public/basic.ics">
+      Subscribe to Apple Calendar
     </a>
-  </p>
 
-  <p style="margin-top:30px;">
-    <strong>⚠️ Important</strong><br>
-    Choose <strong>Subscribe</strong> rather than importing or adding individual events.
-    A subscription stays connected to the PTA calendar so future changes can be received automatically.
-  </p>
+    <div class="warning">
+      <strong>Important:</strong> Please do not use Private Mode
+      when clicking the link. The calendar subscription may not open
+      correctly in Private Mode.
+    </div>
+
+    <div class="steps">
+
+      <h2>What to Expect</h2>
+
+      <p>
+        <strong>1. A subscription page will open in Calendar.</strong><br>
+        The PTA calendar will appear as a subscription URL.
+      </p>
+
+      <p>
+        <strong>2. Tap Find.</strong><br>
+        This will connect the Nan Clayton PTA calendar to your Apple Calendar.
+      </p>
+
+    </div>
+
+    <div class="important">
+      <strong>Subscribe — don't import the events.</strong><br>
+      A subscription stays connected to the PTA calendar so future
+      changes can be received automatically.
+    </div>
+
+  </div>
 
 </body>
 </html>
