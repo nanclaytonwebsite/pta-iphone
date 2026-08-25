@@ -1,108 +1,261 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
   <title>Nan Clayton PTA Calendar</title>
 
+  <!-- Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
+      padding: 0;
       background: #ffffff;
-      color: #222222;
-      font-family: Arial, Helvetica, sans-serif;
-      text-align: center;
+      color: #111111;
+      font-family: "Roboto", Arial, sans-serif;
+      -webkit-text-size-adjust: 100%;
     }
 
-    .container {
-      max-width: 700px;
+    .page {
+      width: 100%;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 50px 25px;
+      padding: 28px 22px 45px;
     }
+
+    /* CARDINAL */
 
     .cardinal {
-      width: 180px;
-      max-width: 60%;
-      margin-bottom: 20px;
+      display: block;
+      width: 145px;
+      max-width: 45%;
+      height: auto;
+      margin: 0 auto 18px;
     }
 
+    /* HEADER */
+
     h1 {
-      font-size: 34px;
-      font-weight: 600;
-      margin: 0 0 20px;
+      margin: 0;
+      text-align: center;
+      font-size: clamp(32px, 6vw, 54px);
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: -1px;
     }
 
     .intro {
-      font-size: 18px;
-      line-height: 1.5;
-      margin-bottom: 35px;
-      color: #555555;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 16px 28px;
-      background: #222222;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 17px;
-      font-weight: 600;
-    }
-
-    .button:hover {
-      background: #444444;
-    }
-
-    .important {
-      margin-top: 45px;
-      padding: 25px;
-      border-top: 1px solid #dddddd;
-      font-size: 15px;
-      line-height: 1.6;
-      color: #555555;
-    }
-
-    .warning {
-      margin-top: 30px;
-      padding: 18px;
-      background: #fff7f5;
-      border: 1px solid #e2b8b0;
-      border-radius: 8px;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .steps {
-      margin-top: 30px;
-      padding: 25px;
-      background: #f7f7f7;
-      border-radius: 8px;
-      text-align: left;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    .steps h2 {
+      max-width: 650px;
+      margin: 20px auto 38px;
       text-align: center;
-      font-size: 22px;
-      margin-top: 0;
+      font-size: clamp(19px, 3vw, 26px);
+      line-height: 1.45;
+      color: #444444;
     }
 
-    .steps p {
-      margin: 15px 0;
+    /* WHAT TO EXPECT */
+
+    .instructions {
+      background: #f7f7f7;
+      border-radius: 18px;
+      padding: 34px 38px 28px;
+      margin-bottom: 34px;
     }
+
+    .instructions h2 {
+      margin: 0 0 28px;
+      text-align: center;
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 700;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      column-gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .step:last-child {
+      border-bottom: none;
+      padding-bottom: 4px;
+    }
+
+    .number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #b83220;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .step-text {
+      font-size: 21px;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    /* SUBSCRIBE BUTTON */
+
+    .subscribe-button {
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+      margin: 28px auto 42px;
+      padding: 17px 34px;
+
+      background: #b83220;
+      color: #ffffff;
+
+      font-family: "Roboto", Arial, sans-serif;
+      font-size: clamp(17px, 3vw, 22px);
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+
+      border-radius: 32px;
+
+      box-shadow: 0 8px 0 #7f2418;
+
+      transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+    }
+
+    .subscribe-button:hover {
+      background: #a92e1e;
+      transform: translateY(2px);
+      box-shadow: 0 6px 0 #7f2418;
+    }
+
+    .subscribe-button:active {
+      transform: translateY(7px);
+      box-shadow: 0 1px 0 #7f2418;
+    }
+
+    /* BOTTOM REMINDER */
+
+    .reminder {
+      border-top: 1px solid #dddddd;
+      padding-top: 30px;
+
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .calendar-icon {
+      width: 105px;
+      height: 105px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .reminder-text {
+      font-size: 19px;
+      line-height: 1.5;
+      color: #444444;
+    }
+
+    .reminder-text strong {
+      color: #222222;
+      font-weight: 700;
+    }
+
+    /* MOBILE */
 
     @media (max-width: 600px) {
-      .container {
-        padding: 35px 20px;
+
+      .page {
+        padding: 22px 16px 35px;
       }
 
       .cardinal {
-        width: 150px;
+        width: 120px;
+        margin-bottom: 14px;
       }
 
       h1 {
-        font-size: 28px;
+        font-size: 32px;
+      }
+
+      .intro {
+        font-size: 18px;
+        margin-top: 16px;
+        margin-bottom: 28px;
+      }
+
+      .instructions {
+        padding: 25px 18px 18px;
+        border-radius: 16px;
+      }
+
+      .instructions h2 {
+        font-size: 29px;
+        margin-bottom: 16px;
+      }
+
+      .step {
+        grid-template-columns: 43px 1fr;
+        column-gap: 12px;
+        padding: 17px 0;
+      }
+
+      .number {
+        width: 38px;
+        height: 38px;
+        font-size: 19px;
+      }
+
+      .step-text {
+        font-size: 17px;
+        line-height: 1.45;
+      }
+
+      .subscribe-button {
+        width: 100%;
+        padding: 17px 18px;
+        font-size: 18px;
+        margin-top: 24px;
+        margin-bottom: 36px;
+      }
+
+      .reminder {
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .calendar-icon {
+        width: 72px;
+        height: 72px;
+      }
+
+      .reminder-text {
+        font-size: 16px;
+        line-height: 1.45;
       }
     }
   </style>
@@ -110,59 +263,119 @@
 
 <body>
 
-  <div class="container">
+  <main class="page">
 
+    <!-- CARDINAL -->
+    <!-- Change cardinal.png to the filename of your existing cardinal image -->
     <img
-      src="cardinal phone.png"
+      class="cardinal"
+      src="cardinal%20phone.png"
       alt="Nan Clayton PTA cardinal"
-      class="cardinal">
+    >
+
+    <!-- HEADER -->
 
     <h1>iPhone Users: Subscribe Here</h1>
 
     <p class="intro">
-      Subscribe to the Nan Clayton PTA calendar to receive event updates.
+      Subscribe to the Nan Clayton PTA calendar
+      to receive event updates.
     </p>
 
-    <a
-      class="button"
-      href="webcal://calendar.google.com/calendar/ical/c_3vbs72qgcje33ggv7ahervbhm8%40group.calendar.google.com/public/basic.ics">
-      Subscribe to the Calendar for iPhone
-    </a>
+    <!-- INSTRUCTIONS -->
 
-    <div class="warning">
-      <strong>Important:</strong> Please do not use Private Mode
-      when clicking the link. The calendar subscription may not open
-      correctly in Private Mode.
-    </div>
-
-    <div class="steps">
+    <section class="instructions">
 
       <h2>What to Expect</h2>
 
-      <p>
-        <strong>1. A subscription page will open in the Calendar app.</strong><br>
-        The PTA calendar link will appear as a subscription URL window.
-      </p>
+      <div class="step">
+        <div class="number">1</div>
+        <div class="step-text">
+          The subscription link button will ask
+          to open Apple Calendar.
+        </div>
+      </div>
 
-      <p>
-        <strong>2. Tap Find.</strong><br>
-        This will connect the Nan Clayton PTA calendar
-      </p>
-      
-      <p>
-        <strong>3. Select the check mark in the top right corner.</strong><br>
-        This will create the synced Nan Clayton PTA calendar to your Apple Calendar App.
-      </p>
-      
-    </div>
+      <div class="step">
+        <div class="number">2</div>
+        <div class="step-text">
+          Add Subscription Calendar will open
+          and the subscription URL window
+          will auto populate.
+        </div>
+      </div>
 
-    <div class="important">
-      <strong>Be sure to "subscribe" - and do not import the events to an existing calendar as those links may not refresh.</strong><br>
-      Subscriptions stay connected to the PTA calendar so future
-      changes can be received automatically!
-    </div>
+      <div class="step">
+        <div class="number">3</div>
+        <div class="step-text">
+          Once populated, select Find.
+        </div>
+      </div>
 
-  </div>
+      <div class="step">
+        <div class="number">4</div>
+        <div class="step-text">
+          Title will read
+          <strong>Nan Clayton PTA Event Calendar</strong>.
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="number">5</div>
+        <div class="step-text">
+          Once auto populated, click the check mark
+          in the upper right corner to accept.
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="number">6</div>
+        <div class="step-text">
+          Adjust calendar settings
+          (color and reminders) and then close
+          the options with the X in the upper left corner.
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SUBSCRIBE BUTTON -->
+
+    <a
+      class="subscribe-button"
+      href="webcal://calendar.google.com/calendar/ical/c_3vbs72qgcje33ggv7ahervbhm8%40group.calendar.google.com/public/basic.ics"
+    >
+      Subscribe to the Nan Clayton PTA Calendar
+    </a>
+
+    <!-- BOTTOM REMINDER -->
+
+    <section class="reminder">
+
+      <!-- Change apple-calendar.png to the filename of your icon -->
+      <img
+        class="calendar-icon"
+        src="apple-calendar.png"
+        alt="Apple Calendar"
+      >
+
+      <div class="reminder-text">
+
+        <strong>
+          Be sure to "subscribe" – and do not import the events
+          to an existing calendar as those links may not refresh.
+        </strong>
+
+        <br>
+
+        Subscriptions stay connected to the PTA calendar so
+        future changes can be received automatically!
+
+      </div>
+
+    </section>
+
+  </main>
 
 </body>
 </html>
